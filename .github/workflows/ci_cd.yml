@@ -22,13 +22,13 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build Backend Image
-      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/backend ./task1/backend
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/backend ./task-1/backend
 
     - name: Build React Image
-      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/react ./task1/frontend
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/react ./task-1/frontend
 
     - name: Build LAMP Image
-      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/lamp ./task1/lamp
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/lamp ./task-1/lamp
 
     - name: Push Backend Image
       run: docker push ${{ secrets.DOCKER_USERNAME }}/backend
@@ -48,13 +48,13 @@ jobs:
 
     - name: Run Tests
       run: |
-        cd task1/backend
+        cd task-1/backend
         npm install
         npm test
 
     - name: Run Frontend Tests
       run: |
-        cd task1/frontend
+        cd task-1/frontend
         npm install
         npm test
 
@@ -77,5 +77,5 @@ jobs:
 
     - name: Deploy Application
       run: |
-        cd task1
+        cd task-1
         docker-compose up -d
