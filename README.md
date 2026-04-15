@@ -172,6 +172,12 @@ Databases
 👉 Helps in handling traffic and basic protection
 
 ---
+## 📊 Architecture Diagram
+
+The overall system design and flow across all tasks:
+
+![Architecture Diagram](./diagram.png)
+---
 
 ## ⚠️ Assumptions
 
